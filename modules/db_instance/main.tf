@@ -31,7 +31,7 @@ resource "aws_db_instance" "this" {
   kms_key_id        = var.kms_key_id
   license_model     = var.license_model
 
-  name                                = var.name
+  db_name                             = var.name
   username                            = var.username
   password                            = var.password
   port                                = var.port
@@ -115,12 +115,6 @@ resource "aws_db_instance" "this" {
     delete = lookup(var.timeouts, "delete", null)
     update = lookup(var.timeouts, "update", null)
   }
-
-  lifecycle {
-    ignore_changes = [
-      latest_restorable_time
-    ]
-  }
 }
 
 resource "aws_db_instance" "this_mssql" {
@@ -137,7 +131,7 @@ resource "aws_db_instance" "this_mssql" {
   kms_key_id        = var.kms_key_id
   license_model     = var.license_model
 
-  name                                = var.name
+  db_name                             = var.name
   username                            = var.username
   password                            = var.password
   port                                = var.port
