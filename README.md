@@ -1,4 +1,6 @@
+⚠️ THIS IS A FORK USED IN terraform-rds-pgsql, DON’T USE IT DIRECTLY ⚠️
 # AWS RDS Terraform module
+
 
 Terraform module which creates RDS resources on AWS.
 
